@@ -1,3 +1,4 @@
+import 'package:call_logs/Styles/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:call_logs/recent_calls/call_item.dart';
 import 'package:flutter/services.dart';
@@ -18,11 +19,11 @@ class _RecentCallsState extends State<RecentCalls> {
           'Журнал звонков',
           style: TextStyle(color: Colors.black),
         ),
-        backgroundColor: const Color(0xffF9F9FB),
+        backgroundColor: AppColors.appBar,
 
         systemOverlayStyle: const SystemUiOverlayStyle(
           // Status bar color
-          statusBarColor: Color(0xffF9F9FB),
+          statusBarColor: AppColors.appBar,
 
           // Status bar brightness (optional)
           statusBarIconBrightness: Brightness.dark, // For Android (dark icons)
@@ -35,7 +36,7 @@ class _RecentCallsState extends State<RecentCalls> {
         separatorBuilder: (_, int index) =>
         const Padding(
           padding: EdgeInsets.only(left: 42),
-          child: Divider(thickness: 0.5, height: 0.5),
+          child: Divider(thickness: 0.5, height: 0.5, color: AppColors.tertiary),
         ),
         itemCount: 300,
         physics: const BouncingScrollPhysics(),

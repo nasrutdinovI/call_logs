@@ -1,5 +1,8 @@
+import 'package:call_logs/Styles/colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../Styles/text_styles.dart';
 
 class CallCard extends StatefulWidget {
   const CallCard({Key? key}) : super(key: key);
@@ -19,30 +22,30 @@ class _CallCardState extends State<CallCard> {
             padding: EdgeInsets.only(left: 14, top: 15, right: 14, bottom: 31),
             child: Icon(
               Icons.phone_forwarded,
-              color: Color(0xFFC4C4C6),
+              color: AppColors.tertiary,
               size: 14,
             ),
           ),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children:  [
                 Text('+0 (000) 000-00-00',
                     style:
-                    TextStyle(fontSize: 17, fontWeight: FontWeight.bold)),
+                    AppTextStyles.bold17()),
                 Text('Доп. информация',
-                    style: TextStyle(color: Color(0xff8A8A8D), fontSize: 15)),
+                    style: AppTextStyles.regular15()),
               ],
             ),
           ),
-          const Text(
-              'Дата', style: TextStyle(color: Color(0xff8A8A8D), fontSize: 15)),
+           Text(
+              'Дата', style: AppTextStyles.regular15()),
           IconButton(
               padding: const EdgeInsets.only(left: 8, right: 21),
               onPressed: () => Navigator.pushNamed(context, '/info'),
               icon: const Icon(
                 Icons.info_outlined,
-                color: Color(0xff3478F6),
+                color: AppColors.link,
                 size: 22,
               )),
         ],
